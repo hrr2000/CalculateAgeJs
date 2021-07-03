@@ -1,8 +1,11 @@
+/**
+ * Age module is used to calculate the age in different units
+ * 
+ * @param {Date, Number} date 
+ * @param {Object} options 
+ * @returns 
+ */
 export default function Age(date, options = null) {
-
-    let unit = 'd';
-
-    if (options)({ unit } = options);
 
     if (!(date instanceof Date)) {
         date = parseInt(date, 10);
@@ -12,20 +15,36 @@ export default function Age(date, options = null) {
         date = new Date(date);
     }
 
+    date = Date.now() - date;
+
+    return calculateAge(date);
+
+
+    /**
+     * validation function that validates the milliseconds
+     * 
+     * @param {integer} date 
+     */
     function validateDate(date) {
         if (date && date != NaN && date >= 0)
             throw new Error('please use right date');
     }
 
-    date = Date.now() - date;
-
-    function calculateAge(date, unit) {
+    /**
+     * function that calculate a date in specific unit
+     * 
+     * @param {Integer} date 
+     * @param {string} unit 
+     * @returns {Object}
+     */
+    function calculateByUnit(date, unit) {
         date = parseInt(date, 10);
 
+        // needs to be improved
         const units = {
             'd': 1000 * 60 * 60 * 24,
             'm': 1000 * 60 * 60 * 24 * 30,
-            'y': 1000 * 60 * 60 * 24 * 30 * 12,
+            'y': 1000 * 60 * 60 * 24 * 365,
         };
 
         return {
@@ -35,25 +54,28 @@ export default function Age(date, options = null) {
 
     }
 
-    switch (unit) {
-        case 'd':
-            const d = calculateAge(date, 'd');
-            return {
-                days: d.value,
-            };
-        case 'm':
-            const m = calculateAge(date, 'm');
-            return {
-                months: m.value,
-                days: calculateAge(m.remainder, 'd').value,
-            };
-        case 'y':
-            const y = calculateAge(date, 'y');
-            let rem = calculateAge(y.remainder, 'm');
-            return {
-                years: y.value,
-                months: rem.value,
-                days: calculateAge(rem.remainder, 'd').value,
-            }
+    /**
+     * 
+     * @param {Integer} date 
+     * @returns 
+     */
+    function calculateAge(date) {
+        let years, months, days;
+        value, remainder;
+
+        ({ value, remainder } = calculateByUnit(date, 'y'));
+        years = value;
+        ({ value, remainder } = calculateByUnit(remainder, 'm'));
+        months = value;
+        ({ value, remainder } = calculateByUnit(remainder, 'd'));
+        days = value;
+
+        return {
+            years: years,
+            months: months,
+            days: days,
+        }
     }
+
+
 }

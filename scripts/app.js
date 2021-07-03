@@ -7,9 +7,7 @@ const submitBtn = document.getElementById('caculateAge'),
 
 submitBtn.addEventListener('click', () => {
     let date = new Date(dateInput.value);
-    let age = Age(date, {
-        unit: 'y'
-    });
+    let age = Age(date);
     resultViewer.innerHTML = `
         years: ${age.years}
         months: ${age.months}
