@@ -23,7 +23,7 @@ export default function Age(date, options = null) {
     /**
      * validation function that validates the milliseconds
      * 
-     * @param {integer} date 
+     * @param {Integer} date 
      */
     function validateDate(date) {
         if (date && date != NaN && date >= 0)
@@ -34,7 +34,7 @@ export default function Age(date, options = null) {
      * function that calculate a date in specific unit
      * 
      * @param {Integer} date 
-     * @param {string} unit 
+     * @param {String} unit 
      * @returns {Object}
      */
     function calculateByUnit(date, unit) {
@@ -60,8 +60,7 @@ export default function Age(date, options = null) {
      * @returns 
      */
     function calculateAge(date) {
-        let years, months, days;
-        value, remainder;
+        let years, months, days, value, remainder;
 
         ({ value, remainder } = calculateByUnit(date, 'y'));
         years = value;
