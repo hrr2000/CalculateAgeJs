@@ -1,0 +1,16 @@
+@import 'variables';
+@import 'components/form';
+@import 'components/buttons';
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, $secondary, $primary);
+}
+
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    @include form;
+    @include buttons;
+}

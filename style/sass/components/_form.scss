@@ -1,0 +1,42 @@
+@mixin form {
+    .form {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px 20px;
+        min-width: 200px;
+        width: auto;
+        box-shadow: 0 10px 40px rgb(0, 0, 0, 0.1);
+        background: white;
+        .form-header {
+            .form-heading {
+                color: rgb(59, 59, 59);
+            }
+        }
+        .form-body {
+            margin: 20px 0;
+        }
+        .form-footer {
+            .submit {
+                width: 100%;
+            }
+        }
+    }
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+    .form-control {
+        padding: 5px 10px;
+        border: 1px solid #ddd;
+        color: $text-dark;
+        outline: 0;
+        &:focus {
+            color: $primary;
+            border-color: $secondary;
+        }
+    }
+    .form-label {
+        font-size: .8rem;
+        padding: 5px 0;
+    }
+}

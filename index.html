@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/css/style.css">
+    <title>Calculate Age</title>
+</head>
+
+<body>
+    <main id="app">
+        <div class="form">
+            <div class="form-header">
+                <h2 class="form-heading">Calculate Age</h2>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label for="date_of_birth" class="form-label">Date Of Birth</label>
+                    <input id="dateOfBirth" name="date_of_birth" class="form-control" type="date" />
+                </div>
+            </div>
+            <div class="form-footer">
+                <button id="caculateAge" class="btn btn-primary submit">
+                    Caculate
+                </button>
+            </div>
+            <pre id="resultViewer"></pre>
+        </div>
+    </main>
+
+    <script type="module" src="scripts/app.js"></script>
+</body>
+
+</html>

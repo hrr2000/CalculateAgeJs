@@ -1,0 +1,22 @@
+@mixin buttons {
+    .btn {
+        padding: 5px 10px;
+        box-shadow: 0 0 40px rgb(0, 0, 0, 0.3);
+        border-radius: 5px;
+        display: block;
+        transition: all .5s;
+        &.btn-primary {
+            background: linear-gradient(-135deg, $secondary, $primary);
+            border: 0 solid $secondary;
+            color: $text-light;
+            background-size: 200% 200%;
+            background-position: 0 100%;
+            &:hover {
+                background-position: 100% 200%;
+            }
+            &:active {
+                background-position: 0 100%;
+            }
+        }
+    }
+}

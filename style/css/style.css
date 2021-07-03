@@ -1,0 +1,69 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #ff0077, #ea00ff);
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#app .form {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px 20px;
+  min-width: 200px;
+  width: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+#app .form .form-header .form-heading {
+  color: #3b3b3b;
+}
+#app .form .form-body {
+  margin: 20px 0;
+}
+#app .form .form-footer .submit {
+  width: 100%;
+}
+#app .form-group {
+  display: flex;
+  flex-direction: column;
+}
+#app .form-control {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  color: #585858;
+  outline: 0;
+}
+#app .form-control:focus {
+  color: #ea00ff;
+  border-color: #ff0077;
+}
+#app .form-label {
+  font-size: 0.8rem;
+  padding: 5px 0;
+}
+#app .btn {
+  padding: 5px 10px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  display: block;
+  transition: all 0.5s;
+}
+#app .btn.btn-primary {
+  background: linear-gradient(-135deg, #ff0077, #ea00ff);
+  border: 0 solid #ff0077;
+  color: white;
+  background-size: 200% 200%;
+  background-position: 0 100%;
+}
+#app .btn.btn-primary:hover {
+  background-position: 100% 200%;
+}
+#app .btn.btn-primary:active {
+  background-position: 0 100%;
+}
+
+/*# sourceMappingURL=style.css.map */
