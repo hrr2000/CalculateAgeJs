@@ -44,7 +44,7 @@ export default function Age(date, options = null) {
         const units = {
             'd': 1000 * 60 * 60 * 24,
             'm': 1000 * 60 * 60 * 24 * 30,
-            'y': 1000 * 60 * 60 * 24 * 365,
+            'y': 1000 * 60 * 60 * 24 * 365.25,
         };
 
         return {
