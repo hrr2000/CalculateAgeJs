@@ -26,7 +26,7 @@ export default function Age(date, options = null) {
      * @param {Integer} date 
      */
     function validateDate(date) {
-        if (date && date != NaN && date >= 0)
+        if (!(date && date != NaN && date >= 0))
             throw new Error('please use right date');
     }
 
